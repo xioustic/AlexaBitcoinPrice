@@ -18,12 +18,12 @@ var getAlexaResponse = (callback) => {
             var data = JSON.parse(body)
             var price = data.data.amount
             rootobj.mainText = [
-                'The current price of',
-                'Bitcoin according to',
-                'Coinbase Spot Price',
-                'is',
-                price,
-                'US Dollars'
+                'The current value of',
+                'Bitcoin is',
+                price.split('.')[0],
+                'US Dollars and',
+                price.split('.')[1],
+                'cents'
             ].join(' ')
             //console.log(price)
             callback(null, rootobj)
